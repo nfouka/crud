@@ -1,0 +1,91 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<body>
+    <div class="container"> 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">GLACIOCLIM PROJECT</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="starter-template">
+      <br>  <br><br>
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><!-- /.container -->
+    
+   
+<h1>Ajouter un acteur</h1>
+
+{% if message %}
+<p style="color: green ; ">{{ message }}</p>
+{% endif %}
+
+{% form_theme form 'AcmeDemoBundle:Form:bootstrap_3_layout.html.twig' %}
+
+
+<form action="#" method="post" {{ form_enctype(form) }}>
+   
+    <div>
+    {{ form_errors(form.nom) }}
+    {{ form_label(form.nom, 'Votre nom'|trans) }}
+    {{ form_widget(form.nom) }}
+    </div>
+    (*) votre nom dois avoir au moin deux lettres .
+    <div>
+    {{ form_errors(form.prenom) }}
+    {{ form_label(form.prenom, 'Votre Prénom'|trans) }}
+    {{ form_widget(form.prenom) }}
+    </div>
+    (*) votre prénom dois avoir au moin deux lettres .
+    <div>
+    {{ form_errors(form.dateNaissance) }}
+    {{ form_label(form.dateNaissance, 'Date de naissance'|trans) }}
+    {{ form_widget(form.dateNaissance) }}
+    </div>
+    
+      <div>
+    {{ form_errors(form.sexe) }}
+    {{ form_label(form.sexe, 'sexe'|trans) }}
+    {{ form_widget(form.sexe) }}
+    </div>
+    
+    {{ form_rest(form) }}
+    <br/>
+    <input type="submit" id="submit"  name="submit" />
+   
+</form>
+
+<p><a href="{{ path('myapp_acteur_lister') }}">Retour à la liste des acteurs</a></p>
+</div>
+    
+    </div> <!-- /container -->
+
+
+  </body>

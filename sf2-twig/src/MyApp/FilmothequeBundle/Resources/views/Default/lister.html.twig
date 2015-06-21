@@ -1,0 +1,88 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<body>
+    <div class="container"> 
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">GLACIOCLIM PROJECT</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br><br>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Symfony LTS With BootStrap 3.0</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="starter-template">
+
+        <h1>Bootstrap starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      </div>
+
+    </div><!-- /.container -->
+    
+   
+
+<h1>Liste des acteurs</h1>
+
+<table class="table table-striped">
+
+  <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Date de naissance</th>
+        <th>Sexe</th>
+        <th>Modifier</th>
+        <th>Suprimer</th>
+      </tr>
+    </thead>
+
+{% for a in acteurs %}
+	<tr>
+		<td>{{ a.nom }}</td>
+		<td>{{ a.prenom }}</td>
+		<td>{{ a.dateNaissance|date('d/m/Y') }}</td>
+		<td>{{ a.sexe }}</td>
+		<td><a href="{{ path('myapp_acteur_modifier', { 'id': a.id }) }}">Modifier</a></td>
+		<td><a href="{{ path('myapp_acteur_supprimer', { 'id': a.id }) }}">Supprimer</a></td>
+	</tr>
+{% else %}
+	<tr><td>Aucun acteur n'a été trouvé.</td></tr>
+{% endfor %}
+</table>
+
+<p style="font-size: 20px;"><a href="{{ path('myapp_acteur_ajouter') }}">Ajouter un acteur</a><p>
+</p>
+</div>
+
+
+  </body>

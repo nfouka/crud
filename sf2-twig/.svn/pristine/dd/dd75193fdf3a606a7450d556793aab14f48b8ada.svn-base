@@ -1,0 +1,47 @@
+<?php
+
+/* AcmeDemoBundle:Form:fields.html.twig */
+class __TwigTemplate_551744c510e8e94ae67015572844642ccd4dc0b8b74f4f09cc2e1b6e3e3f953c extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+            'integer_widget' => array($this, 'block_integer_widget'),
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 2
+        $this->displayBlock('integer_widget', $context, $blocks);
+    }
+
+    public function block_integer_widget($context, array $blocks = array())
+    {
+        // line 3
+        echo "    <div class=\"integer_widget\">
+        ";
+        // line 4
+        $context["type"] = ((array_key_exists("type", $context)) ? (_twig_default_filter((isset($context["type"]) ? $context["type"] : $this->getContext($context, "type")), "number")) : ("number"));
+        // line 5
+        echo "        ";
+        $this->displayBlock("form_widget_simple", $context, $blocks);
+        echo "
+    </div>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "AcmeDemoBundle:Form:fields.html.twig";
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  31 => 5,  29 => 4,  26 => 3,  20 => 2,);
+    }
+}
